@@ -13,28 +13,31 @@ $ cd issp_localsearch
 $ make
 ```
 
-## Generate points
-
 ## Simple exapmle
 ```
+$ python gen_connected.py --mode demo
 $ python issp.py -d 2 -pf linear -n 1000 -I hv -r 1.1 -R 1000 -W 1000 -k 100 -alg fils-rlist-nlist -ln 20 -lr 20 -id 0
 ```
 
+The first command runs a generator of point set such that:
+- The number of objectives is $2$
+- The shape of Pareto front is linear
+- Point set size is $1000$
+
+The second command runs local search with two neighbour list for an ISSP. 
 The parameters of the ISSP are as follows:
-- The number of objectives `-d` : 2
-- The shape of Pareto front `-pf`
-- Point set size `-n` : 1000
+- The number of objectives `-d` : $2$
+- The shape of Pareto front `-pf` : linear
+- Point set size `-n` : $1000$
 - Indicator `-I` : hypervolume `hv` 
-- Reference point `-r` : 1.1
-- Reference point set size `-R` : 1000
-- Weight point set size `-W` : 1000
-- Subset size `-k` : 100
+- Reference point of hypervolume `-r` : $1.1$
+- Subset size `-k` : $100$
 - Selector's algorithm `-alg` : local search with nearest neighbour list and random neighbour list `fils-rlist-nlist`
-- Nearest neighbour list size `-ln` : 20
-- Random neighbour list size `-lr` : 20
+- Nearest neighbour list size `-ln` : $20$
+- Random neighbour list size `-lr` : $20$
 - Run ID (and for seed) `-id` : 0
 
-## Reproduce results presented in the paper
+## Reproduce results presented in the paper (YET)
 ```
 $ python run_all.py
 ```
